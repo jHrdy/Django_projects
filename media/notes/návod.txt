@@ -1,0 +1,25 @@
+napiš do terminálu: django-admin startproject mysite
+vytvoř složku diary pomocí příkazu python manage.py startapp diary
+otevři settings => do installed_apps připsat diary
+TEĎ LZE ZAČÍT UPRAVOVAT MODELY:
+- v souboru diary/models naprogramujeme odpovídající modely
+- každý model bude class (obviously) -> kdyžtak čekuj docs: https://docs.djangoproject.com/en/5.0/topics/db/models/
+- V TOMTO PROJEKTU: 
+	- vytváříme class Genres podle dokumentace výše
+	- vytvoříme další objekty všude kde
+	- každý atribut foreingKeys dostane on_delete=models.CASCADE, když se smaže aby se smazaly 
+	všechny záznamy na něj navázané
+- vytvoříme migrace pomocí: python manage.py makemigrations (to vygeneruje soubor pro vytvoření databáze)
+- soubor 0001_initial.py vytvořen v migrations, lze zčeknout  
+- dále napíšeme do konzole python manage.py migrate a něco se stane
+- teď napíšeme do konzole python manage.py runserver
+(abychom rozjeli server) dále lze do url připsat '/admin'
+- následně otevřeme druhý terminál (taky to má prej důvod) vytvoříme v něm superuser-a příkazem: python manage.py createsuperuser
+- posléze si vytvoříme jméno a heslo a mužeme se na stránce přihlásit :D
+- teď zajdeme do složky admin.py a v ní naimportujeme vše z diary.models a dále 
+pomocí admin.site.register(Genre) pro (Author, Genre...) vytvoříme všechny registri  
+- pozor na atributy 'null' a 'blank' oba jsou bool ale null je na straně databáze (čili žádná hodnota) a blank je prázdný string (na straně aplikace)
+čili blank=True, null=False => lze v aplikaci nenapsat nic a nechat prázdný string ale do databáze se uloží "" a nikoli None
+- dobré pravidlo (ne vždy nutné): vždy když se udělá změna v models tak provést makemigrations (ne vždy je to nutné) každopádně je to dobré 
+dělat aby nedocházelo k neočekávanému chování
+- atribut unique - pokud bychom chtěli aby byly objekty unikátní nastavíme unique=True

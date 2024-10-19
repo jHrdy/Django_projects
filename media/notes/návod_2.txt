@@ -1,0 +1,13 @@
+vytvoříme složku templates
+v ní další složku diary a v ní index.html
+- vytvoříme nebo z cv_6 zkopísujeme base.html -> lze najít na Gitlabu
+- napíšeme šablonu v indexu
+- aby se zobrazila přejdeme do views.py -> napíšeme funkci def index(request)
+- nutno ale importovat from diary import models
+- v mysite/urls.py se provádí mapování a tady právě zavoláme funkci index() 
+(opět ofc nutno importovat soubor)
+- následně si vypisujeme věci pomocí html už přímo v index.html
+- vypsali jsme si knížky a popisky - teď ale chceme zkrátit délky popisků na počet slov
+to uděláme pomocí metody short_description kterou napíšeme do models.py
+- vytvoříme book_list templates/diary a opět jej naimportujeme do urls
+- v booklistu máme forcyklus který zobrauje knihy, objekt: BookListView byl vytvořen ve views 

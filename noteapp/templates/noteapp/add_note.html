@@ -1,0 +1,29 @@
+{% extends 'noteapp/base.html' %}
+
+{% block title %}Add New Notes{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="info-box"><h1 class="txt-normal ms-3 mb-3 pb-1">Let's contribute!</h1></div>
+            <b>
+                <div class="dark-blue-box p-4">
+                    <form method="POST" id="add-notes-form disp-flex" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div>
+                            {{form}}
+                        </div>
+                        <input type="submit" class="btn btn-outline-light ms-1 mt-3 btn-lg" value="  Upload  ">
+                    </form>
+                
+                </div>
+            </b>
+        </div>
+
+        <div class="col-5 dark-blue-box p-4">
+            <h2 class="mb-2">Missing your name?<br> Let's sign you up!</h2>
+            <a href="{% url 'add_author' %}" class="btn btn-primary mb-3" id="new-author-btn"><b>Add new author</b></a>
+        </div>
+</div>
+{% endblock %}

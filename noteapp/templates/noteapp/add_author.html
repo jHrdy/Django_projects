@@ -1,0 +1,29 @@
+{% extends "noteapp/base.html" %}
+{% block title %}Add New Author{% endblock %}
+
+{% block content %}
+<div class="row ms-1">
+        <div class="col-5 dark-blue-box p-4">
+            <h2 class="mb-2">We are glad you decided to contribute!<br> Let's get your name!</h2>
+            <button class="btn btn-primary mb-3" id="new-author-btn" onclick="appearOrHideForm()"><b>Add new author</b></button>
+            <div hidden id="hidden-author-form">
+                <!--<div class="loading-bar mt-2 ms-2" id="loading"></div>-->
+                <form method="POST" id="add-notes-form disp-flex" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form_author}}
+                    <input type="submit" id="add-author-form" class="btn btn-outline-light mb-2 mt-2" value="Save New Author">
+                </form>
+        
+            </div>
+        </div>
+</div>
+<div class="ms-1 mt-2 p-3 dark-blue-box" style="max-width: 440px;">
+    <h2 id="blacktext">All done? Lets go back!</h2>
+    <a href="{% url 'add_notes' %}" class="me-2" id="here-link">Add Notes</button>
+    <a href="{% url 'index' %}" class="me-2" id="here-link">Main page</button>
+</div>
+
+
+
+    
+{% endblock %}

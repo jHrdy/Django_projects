@@ -1,0 +1,32 @@
+{% extends "noteapp/base.html" %}
+
+{% block content %}
+<p class="info-box ps-3 pt-2 pb-2 pe-2"><b>
+    Currently, there are {{ authors_count|default:0 }} authors. The total number of material contributions is {{ notes_count|default:0 }}.
+Below, you will find notes on mathematical, physical, programming and other subjects. You can share your own notes <a id="here-link" href="{% url 'add_notes' %}">here.</a></b></p>
+
+    <ul style="list-style-type:none;">
+    
+    <section class="card_container1">
+        {% for note in notes_list %}
+
+        {% if note.title == 'Untitled'%}    
+        {% else %}
+        <div class="card1 p-3"><p class="card-title">{{ note }} <br> <p class="author"> by: {{ note.author }}</p><p>{{ note.about }}</p>
+            subject: {{note.subject}}<br></p>
+            {% load static %}
+            <button class="btn btn-outline-light mb-2"><b>Show material</b></button>
+            {% if note.file %}
+                <a class="download-link" href="{{ note.file.url }}" download><br><b>Download {{ note.file.name }}</b></a>
+            {% else %}
+                <p>No file available</p>
+            {% endif %}
+            <br>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    </section>
+    
+{% endblock %}
+

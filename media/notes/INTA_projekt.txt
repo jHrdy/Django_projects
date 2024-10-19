@@ -1,0 +1,4 @@
+Note-Share:
+	- každý 'projekt' (zápisky, myšlenková mapa...) bude mít 1. Název, 2. Autora, 3. Kategorii (Mat, Fyz...), 4. Kliknutí (počet)
+	- na úvodnej stránke budú 3 najklikanejšie projekty*, ďalej bude projekt obsahovať stránku všetkých projektov
+	- 

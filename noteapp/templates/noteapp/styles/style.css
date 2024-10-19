@@ -1,0 +1,40 @@
+.card_container
+{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card
+{
+    background-color: rgba(0, 54, 153, 0.61);
+    color: white;
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    text-align: left;
+    border-radius: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card_img
+{
+    border-radius: 15px 15px 0 0;
+    background-color: #d5d534;
+    height: 220px;
+    margin-bottom: 50px;
+    background-size:cover;
+}
+
+.card:hover
+{
+    background-color: #000000;
+    color: #ffffff;
+    /*border: #f5f50f;*/
+    cursor:pointer;
+    transform: scale(1.16) translateY(-10px);
+    transition: all 0.35s;
+}
+

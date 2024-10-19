@@ -1,0 +1,14 @@
+SHA256:PBKq1L0fT8RXdCIrVaed+MGkFDcxxTWzFnkH9BvKe8U jozef.hrdy@cern.ch
+
+The key's randomart image is:
++---[RSA 4096]----+
+|            o=B%X|
+|           ..+*O%|
+|      .   . .ooB=|
+|   . o o . ...+.+|
+|  . o o S o .o oE|
+| . .   o o .  . .|
+|  .   . . .  . . |
+|       . +    .  |
+|        . .      |
++----[SHA256]-----+
